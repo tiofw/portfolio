@@ -1,2 +1,3 @@
-# portfolio
-Philip G's personal portfolio website
+# Philip G's Portfolio
+
+Personal portfolio website showcasing projects, technical demonstrations and applications.

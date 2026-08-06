@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <!-- ========================================== -->
+  <!--                  Header                    -->
+  <!-- ========================================== -->
+
+  <head>
+    <meta charset="utf-8">
+    <!-- ----- Title ----- -->
+    <title>Philip's Portfolio</title>
+    <!-- ----- CSS ----- -->
+    <link rel="stylesheet" href="css/portfolio.css">
+  </head>
+
+  <!-- ========================================== -->
+  <!--                  Body                      -->
+  <!-- ========================================== -->
+
+  <body>
+
+    <!-------------------------------------------->
+    <!---					Quick Navigation						---->
+    <!-------------------------------------------->
+    <nav class="page-nav">
+        <a href="#section-cv"><img src="media/logos/pg_logo_silver.webp" style="height:16px">CV</a>
+        <a href="#section-coding-projects">👨🏻‍💻 Coding Projects</a>
+        <a href="#section-recent-apps">🚀 Recent Apps</a>
+        <a href="#section-legacy-apps">✈ Legacy Apps</a>
+    </nav>
+
+
+
+    <!-------------------------------------------->
+    <!---					        Page	     					---->
+    <!-------------------------------------------->
+    <div class="page">
+        <!-- ----- Big Title ----- -->
+      <h1>Philip's Portfolio</h1>
+
+      <!-- ----- CV ----- -->
+      <section id="section-cv">
+        <h2>Curriculum Vitae</h2>
+        <div class="cv-card">
+        <img src="media/_pbg/PBG_CV_View.webp">
+        </div>
+      </section>
+
+        <!-- ----- Coding Projects ----- -->
+      <div id="codingProjects"></div>
+
+        <!-- ----- Recent Apps ----- -->
+      <section id="section-recent-apps">
+        <h2>🚀 Recent Apps</h2>
+        <div id="recentApps" class="card-row"></div>
+      </section>
+
+        <!-- ----- Legacy Apps ----- -->
+      <section id="section-legacy-apps">
+      <h2>✈ Legacy Apps</h2>
+        <div id="legacyApps" class="card-row"></div>
+      </section>
+
+        <!-- ----- Other Sections (Writing etc) ----- -->
+      <div id="otherSections"></div>
+
+    </div>
+
+    <!-------------------------------------------->
+    <!---					  	Modal Content						---->
+    <!-------------------------------------------->
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+        <button id="modalClose" class="modal-close">&times;</button>
+        <!-- ===== Header: icon, title, keywords + description ===== -->
+        <div id="modalHeader" class="modal-header">
+            <!-- --- Header Icon --- -->
+            <img id="modalIcon" class="modal-icon">
+            <div class="modal-info">
+                <div class="title-row">
+                    <!-- --- Header Title --- -->
+                    <h2 id="modalTitle"></h2>
+                    <!-- --- Header Keywords --- -->
+                    <div id="modalKeywords"></div>
+                </div>
+                <!-- --- Header Description --- -->
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+        <!-- ===== Gallery ===== -->
+        <div class="gallery">
+            <!-- --- Thumbnail Column --- -->
+            <div id="thumbnailColumn"></div>
+            <!-- --- Preview Image, Title + Description --- -->
+            <div class="preview">
+                <div id="previewContainer"></div>
+                <h3 id="imageTitle"></h3>
+                <p id="imageDescription"></p>
+            </div>
+        </div>
+      </div>
+    </div>
+
+      <!-------------------------------------------->
+      <!---						   JavaScript							---->
+      <!-------------------------------------------->
+    <script src="js/data.js"></script>
+    <script src="js/portfolio.js"></script>
+
+  </body>
+
+</html>
