@@ -7,13 +7,14 @@ const App_Keyword = Object.freeze({
 });
 
 const PBG_Portfolio_Item = ({fn_image, name = null, description = null,
-  ad_fn_image = null, video_fn_image = null,
+  ad_fn_image = null, video_fn_image = null, pdf = null,
   colour_bg1 = null, colour_bg2 = null}) => ({
     fn_image,
     name,
     ad_fn_image,
     description,
     video_fn_image,
+    pdf,
     colour_bg1,
     colour_bg2
 });
@@ -24,6 +25,26 @@ const Screenshot_Item = (name, title, description) => ({
     description
 });
 
+
+/* ------------------------------------------------- */
+/* ---				        Data: CV       	    	   	---- */
+/* ------------------------------------------------- */
+
+let cv_items = {emoji: "🌞",
+								   title: "Curricula Vitae",
+								   description: "My CVs.",
+								   items: [
+
+                  PBG_Portfolio_Item({name: "General CV",
+                      fn_image: "Philip Gottschalk - General CV - 2026-10.jpg",
+                      description: "My general CV.",
+                      pdf: "Philip Gottschalk - General CV - 2026-10.pdf" }),
+									PBG_Portfolio_Item({name: "Software Engineer CV",
+                      fn_image: "Philip Gottschalk - Software Engineer CV - 2026-10.jpg",
+											description: "My software-engineering-specific CV.",
+											pdf: "Philip Gottschalk - Software Engineer CV - 2026-10.pdf" })
+                    ]
+                  };
 
 /* ------------------------------------------------- */
 /* ---				     Data: Recent Apps    		   	---- */
@@ -342,7 +363,7 @@ let ps_other = {emoji: "💫",
 										PBG_Portfolio_Item({name: "3D film #2", fn_image: "2010 - 🎥 Visit Canterbury in 3D!_w512.webp",
 														   description: "I wrote, produced & directed this short film - and shot it in 3D, using a home-made steadycam rig, and 3D-joining software which I had previously created." }),
                     my_writing
-									  ]}
+                  ]};
 
 
 /* ------------------------------------------------- */
@@ -351,6 +372,7 @@ let ps_other = {emoji: "💫",
 
 const portfolio =
 {
+    cv:[cv_items],
     coding_lib:[ps_coding_lib],
     recent_apps:[block_ed, howls, qconvert2, colour_well],
     legacy_apps:[surrounded, ropas, funky_ticker, matrat, rainbow_rings,

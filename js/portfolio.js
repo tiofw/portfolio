@@ -3,6 +3,7 @@
 /* ------------------------------------------------- */
 /* ---				    	 Run on Load  		     	   	---- */
 /* ------------------------------------------------- */
+create_sections(portfolio.cv, "cvs");
 create_sections(portfolio.coding_lib, "codingProjects");
 create_cards(portfolio.recent_apps,"recentApps","card");
 create_cards(portfolio.legacy_apps,"legacyApps","card small-card");
@@ -132,11 +133,18 @@ function show_item(item, folder)
     if ( ! icon_src.startsWith("media/") )
       icon_src = "media/one-sheets/" + icon_src;
     const show_top_row = item.name && item.description;
+    var description = item.description;
+    if ( description && item.pdf )
+    {
+      description += '&nbsp;&nbsp;<a href="media/pdf/'
+                  + item.pdf
+                  + '">PDF 💾</a>';
+    }
     if ( show_top_row )
     {
       modalIcon.src = icon_src;
       modalTitle.innerText = item.name;
-      modalDescription.innerText = item.description;
+      modalDescription.innerHTML = description ;
       modalHeader.style.display = "";
     }
     else {
@@ -267,7 +275,7 @@ function selectScreenshot(thumbnail, index)
     const shot = cur_item.screenies[index];
 
     console.log("typeof thumbnail: " + typeof(thumbnail));
-    update_media(thumbnail.getAttribute("src"));//"media/screenies/" + shot.imageName);
+    update_media(thumbnail.getAttribute("src"));
     imageTitle.textContent = shot.title ?? "";
     imageDescription.textContent = shot.description ?? "";
 
